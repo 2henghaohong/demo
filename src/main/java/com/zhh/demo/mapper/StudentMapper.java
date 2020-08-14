@@ -8,13 +8,14 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+@Mapper
 @Repository
 public interface StudentMapper {
     int countByExample(StudentExample example);
 
     int deleteByExample(StudentExample example);
 
-    int deleteByPrimaryKey(String stuid);
+    int deleteByPrimaryKey(Integer stuid);
 
     int insert(Student record);
 
@@ -22,7 +23,7 @@ public interface StudentMapper {
 
     List<Student> selectByExample(StudentExample example);
 
-    Student selectByPrimaryKey(String stuid);
+    Student selectByPrimaryKey(Integer stuid);
 
     int updateByExampleSelective(@Param("record") Student record, @Param("example") StudentExample example);
 

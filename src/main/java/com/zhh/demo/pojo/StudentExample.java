@@ -114,62 +114,52 @@ public class StudentExample {
             return (Criteria) this;
         }
 
-        public Criteria andStuidEqualTo(String value) {
+        public Criteria andStuidEqualTo(Integer value) {
             addCriterion("StuID =", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidNotEqualTo(String value) {
+        public Criteria andStuidNotEqualTo(Integer value) {
             addCriterion("StuID <>", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidGreaterThan(String value) {
+        public Criteria andStuidGreaterThan(Integer value) {
             addCriterion("StuID >", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidGreaterThanOrEqualTo(String value) {
+        public Criteria andStuidGreaterThanOrEqualTo(Integer value) {
             addCriterion("StuID >=", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidLessThan(String value) {
+        public Criteria andStuidLessThan(Integer value) {
             addCriterion("StuID <", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidLessThanOrEqualTo(String value) {
+        public Criteria andStuidLessThanOrEqualTo(Integer value) {
             addCriterion("StuID <=", value, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidLike(String value) {
-            addCriterion("StuID like", value, "stuid");
-            return (Criteria) this;
-        }
-
-        public Criteria andStuidNotLike(String value) {
-            addCriterion("StuID not like", value, "stuid");
-            return (Criteria) this;
-        }
-
-        public Criteria andStuidIn(List<String> values) {
+        public Criteria andStuidIn(List<Integer> values) {
             addCriterion("StuID in", values, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidNotIn(List<String> values) {
+        public Criteria andStuidNotIn(List<Integer> values) {
             addCriterion("StuID not in", values, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidBetween(String value1, String value2) {
+        public Criteria andStuidBetween(Integer value1, Integer value2) {
             addCriterion("StuID between", value1, value2, "stuid");
             return (Criteria) this;
         }
 
-        public Criteria andStuidNotBetween(String value1, String value2) {
+        public Criteria andStuidNotBetween(Integer value1, Integer value2) {
             addCriterion("StuID not between", value1, value2, "stuid");
             return (Criteria) this;
         }
@@ -241,6 +231,146 @@ public class StudentExample {
 
         public Criteria andStunameNotBetween(String value1, String value2) {
             addCriterion("StuName not between", value1, value2, "stuname");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhonenumberIsNull() {
+            addCriterion("PhoneNumber is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhonenumberIsNotNull() {
+            addCriterion("PhoneNumber is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhonenumberEqualTo(String value) {
+            addCriterion("PhoneNumber =", value, "phonenumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhonenumberNotEqualTo(String value) {
+            addCriterion("PhoneNumber <>", value, "phonenumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhonenumberGreaterThan(String value) {
+            addCriterion("PhoneNumber >", value, "phonenumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhonenumberGreaterThanOrEqualTo(String value) {
+            addCriterion("PhoneNumber >=", value, "phonenumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhonenumberLessThan(String value) {
+            addCriterion("PhoneNumber <", value, "phonenumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhonenumberLessThanOrEqualTo(String value) {
+            addCriterion("PhoneNumber <=", value, "phonenumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhonenumberLike(String value) {
+            addCriterion("PhoneNumber like", value, "phonenumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhonenumberNotLike(String value) {
+            addCriterion("PhoneNumber not like", value, "phonenumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhonenumberIn(List<String> values) {
+            addCriterion("PhoneNumber in", values, "phonenumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhonenumberNotIn(List<String> values) {
+            addCriterion("PhoneNumber not in", values, "phonenumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhonenumberBetween(String value1, String value2) {
+            addCriterion("PhoneNumber between", value1, value2, "phonenumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andPhonenumberNotBetween(String value1, String value2) {
+            addCriterion("PhoneNumber not between", value1, value2, "phonenumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andClassnumberIsNull() {
+            addCriterion("ClassNumber is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClassnumberIsNotNull() {
+            addCriterion("ClassNumber is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andClassnumberEqualTo(String value) {
+            addCriterion("ClassNumber =", value, "classnumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andClassnumberNotEqualTo(String value) {
+            addCriterion("ClassNumber <>", value, "classnumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andClassnumberGreaterThan(String value) {
+            addCriterion("ClassNumber >", value, "classnumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andClassnumberGreaterThanOrEqualTo(String value) {
+            addCriterion("ClassNumber >=", value, "classnumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andClassnumberLessThan(String value) {
+            addCriterion("ClassNumber <", value, "classnumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andClassnumberLessThanOrEqualTo(String value) {
+            addCriterion("ClassNumber <=", value, "classnumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andClassnumberLike(String value) {
+            addCriterion("ClassNumber like", value, "classnumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andClassnumberNotLike(String value) {
+            addCriterion("ClassNumber not like", value, "classnumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andClassnumberIn(List<String> values) {
+            addCriterion("ClassNumber in", values, "classnumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andClassnumberNotIn(List<String> values) {
+            addCriterion("ClassNumber not in", values, "classnumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andClassnumberBetween(String value1, String value2) {
+            addCriterion("ClassNumber between", value1, value2, "classnumber");
+            return (Criteria) this;
+        }
+
+        public Criteria andClassnumberNotBetween(String value1, String value2) {
+            addCriterion("ClassNumber not between", value1, value2, "classnumber");
             return (Criteria) this;
         }
     }

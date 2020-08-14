@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" th:href="@{css/bootstrap.css}">
+		<link rel="stylesheet" type="text/css" th:href="@{css/index.css}">
+		<script th:src="@{https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js}"></script>
+		<script type="text/javascript" th:src="@{js/bootstrap.js}"></script>
+		<script type="text/javascript" th:src="@{js/student.js}"></script>
+		<title>学生信息</title>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span12">
+					<h1>
+						<span>学生信息管理</span>
+					</h1>
+					<table class="table">
+						<thead>
+							<tr>
+								<th>
+									学号
+								</th>
+								<th>
+									姓名
+								</th>
+								<th>
+									手机号码
+								</th>
+								<th>
+									班级
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="student : ${studentList}">
+								<td th:text="${student.stuid}">
+									1
+								</td>
+								<td th:text="${student.stuname}">
+									John
+								</td>
+								<td th:text="${student.phonenumber}">
+									18954123541
+								</td>
+								<td th:text="${student.classnumber}">
+									English Class 1
+								</td>
+						</tbody>
+					</table>
+					<div class="btn-group">
+						<button class="btn btn-default" type="button" id="addStudent"  data-toggle="modal" href="#addStudent-modal">增加</button>
+						<button class="btn btn-default" type="button">修改</button>
+						<button class="btn btn-default" type="button">删除</button>
+					</div>
+
+					<div id="addStudent-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+					 aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									<h3 class="modal-title" id="myModalLabel">
+										标题栏
+									</h3>
+								</div>
+								<div class="modal-body">
+									<p>
+										显示信息
+									</p>
+								</div>
+								<div class="modal-footer">
+									<button class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button> <button class="btn btn-primary">保存设置</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -21,7 +21,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student getInfo(String id, String password) {
-        Student student = studentMapper.selectByPrimaryKey(id);
+        Student student = studentMapper.selectByPrimaryKey(Integer.parseInt(id));
         return student;
     }
 }

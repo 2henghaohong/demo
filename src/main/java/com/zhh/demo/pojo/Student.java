@@ -1,16 +1,20 @@
 package com.zhh.demo.pojo;
 
 public class Student {
-    private String stuid;
+    private Integer stuid;
 
     private String stuname;
 
-    public String getStuid() {
+    private String phonenumber;
+
+    private String classnumber;
+
+    public Integer getStuid() {
         return stuid;
     }
 
-    public void setStuid(String stuid) {
-        this.stuid = stuid == null ? null : stuid.trim();
+    public void setStuid(Integer stuid) {
+        this.stuid = stuid;
     }
 
     public String getStuname() {
@@ -19,5 +23,21 @@ public class Student {
 
     public void setStuname(String stuname) {
         this.stuname = stuname == null ? null : stuname.trim();
+    }
+
+    public String getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber == null ? null : phonenumber.trim();
+    }
+
+    public String getClassnumber() {
+        return classnumber;
+    }
+
+    public void setClassnumber(String classnumber) {
+        this.classnumber = classnumber == null ? null : classnumber.trim();
     }
 }

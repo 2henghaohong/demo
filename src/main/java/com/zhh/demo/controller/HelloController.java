@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 @Controller
 public class HelloController {
@@ -26,5 +29,14 @@ public class HelloController {
         }else{
             return "error";
         }
+    }
+
+    @RequestMapping("/queryStudent")
+    public ModelAndView QueryStudent(){
+        ModelAndView mav = new ModelAndView();
+        List<Student> studentList = studentService.queryStudents();
+        mav.addObject("studentList",studentList);
+        mav.setViewName("Student");
+        return mav;
     }
 }
