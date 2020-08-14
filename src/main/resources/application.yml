@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    name: MyDB #数据库名
+    url: jdbc:sqlserver://127.0.0.1:1433;DatabaseName=MyDB #URL
+    username: sa #用户名
+    password: 1234 #密码
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver #数据库驱动
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml #配置映射文件
+  type-aliases-package: com.zhh.demo.pojo #配置实体类
