@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhh.demo.mapper.StudentMapper" >
+  <resultMap id="BaseResultMap" type="com.zhh.demo.pojo.Student" >
+    <id column="StuID" property="stuid" jdbcType="NCHAR" />
+    <result column="StuName" property="stuname" jdbcType="NCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    StuID, StuName
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zhh.demo.pojo.StudentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from Student
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from Student
+    where StuID = #{stuid,jdbcType=NCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from Student
+    where StuID = #{stuid,jdbcType=NCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zhh.demo.pojo.StudentExample" >
+    delete from Student
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zhh.demo.pojo.Student" >
+    insert into Student (StuID, StuName)
+    values (#{stuid,jdbcType=NCHAR}, #{stuname,jdbcType=NCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhh.demo.pojo.Student" >
+    insert into Student
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="stuid != null" >
+        StuID,
+      </if>
+      <if test="stuname != null" >
+        StuName,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="stuid != null" >
+        #{stuid,jdbcType=NCHAR},
+      </if>
+      <if test="stuname != null" >
+        #{stuname,jdbcType=NCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zhh.demo.pojo.StudentExample" resultType="java.lang.Integer" >
+    select count(*) from Student
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update Student
+    <set >
+      <if test="record.stuid != null" >
+        StuID = #{record.stuid,jdbcType=NCHAR},
+      </if>
+      <if test="record.stuname != null" >
+        StuName = #{record.stuname,jdbcType=NCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update Student
+    set StuID = #{record.stuid,jdbcType=NCHAR},
+      StuName = #{record.stuname,jdbcType=NCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhh.demo.pojo.Student" >
+    update Student
+    <set >
+      <if test="stuname != null" >
+        StuName = #{stuname,jdbcType=NCHAR},
+      </if>
+    </set>
+    where StuID = #{stuid,jdbcType=NCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhh.demo.pojo.Student" >
+    update Student
+    set StuName = #{stuname,jdbcType=NCHAR}
+    where StuID = #{stuid,jdbcType=NCHAR}
+  </update>
+</mapper>
