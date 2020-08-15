@@ -9,4 +9,6 @@ public interface StudentService {
     public List<Student> queryStudents();
 
     public Student getInfo(String id,String password);
+
+    public int insertStudent(Student student);
 }

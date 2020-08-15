@@ -4,6 +4,7 @@ import com.zhh.demo.pojo.Student;
 import com.zhh.demo.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -32,11 +33,17 @@ public class HelloController {
     }
 
     @RequestMapping("/queryStudent")
-    public ModelAndView QueryStudent(){
+    public ModelAndView QueryStudent(Model model){
         ModelAndView mav = new ModelAndView();
         List<Student> studentList = studentService.queryStudents();
         mav.addObject("studentList",studentList);
+        mav.addObject("student",new Student());
         mav.setViewName("Student");
         return mav;
+    }
+
+    @RequestMapping("/addStudent")
+    public void AddStudent(Student student){
+          studentService.insertStudent(student);
     }
 }

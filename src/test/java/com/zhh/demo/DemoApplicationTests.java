@@ -17,8 +17,11 @@ class DemoApplicationTests {
 
     @Test
     public void contextLoads(){
-        Student student = studentService.getInfo("1","张三222");
-        System.out.println("用户姓名：");
-        System.out.println(student.getStuname());
+        Student student = new Student();
+        student.setStuname("五化名");
+        student.setPhonenumber("12345678945");
+        student.setClassnumber("Computer Class 5");
+        int i = studentService.insertStudent(student);
+        System.out.println(i);
     }
 }

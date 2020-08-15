@@ -24,4 +24,9 @@ public class StudentServiceImpl implements StudentService {
         Student student = studentMapper.selectByPrimaryKey(Integer.parseInt(id));
         return student;
     }
+
+    @Override
+    public int insertStudent(Student student) {
+        return studentMapper.insertSelective(student);
+    }
 }
